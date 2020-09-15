@@ -308,8 +308,10 @@ def build(args):
     if args.dataset_file == 'custom':
         # "You should always use num_classes = max_id + 1 where max_id is the highest class ID that you have in your dataset."
         # Reference: https://github.com/facebookresearch/detr/issues/108#issuecomment-650269223
-        num_classes = 2
+        num_classes = 1
     elif args.dataset_file == 'POD':
+        num_classes = 3
+    elif args.dataset_file == 'IIT-AR':
         num_classes = 4
     num_classes_specified_at_run_time = args.num_classes
     if num_classes_specified_at_run_time is not None:
