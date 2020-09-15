@@ -25,7 +25,4 @@ def build_dataset(image_set, args):
     if args.dataset_file == 'custom':
         from .custom import build as build_custom
         return build_custom(image_set, args)
-    if args.dataset_file == 'POD':
-        from .POD import build as build_POD
-        return build_POD(image_set, args)
     raise ValueError(f'dataset {args.dataset_file} not supported')
